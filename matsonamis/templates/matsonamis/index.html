@@ -1,0 +1,10 @@
+{% if latest_ami_list %}
+ <ul>
+ {% for ami in latest_ami_list %}
+  <li><a href="/matsonamis/{{ ami.id }}/">{{ ami.ami_name }}</a></li>
+ {% endfor %}
+ </ul>
+{% else %}
+ <p>No polls are available.</p>
+{% endif %}
+
