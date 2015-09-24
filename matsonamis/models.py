@@ -46,3 +46,8 @@ class Ami(models.Model):
         was_created_recently.admin_order_field = 'ami_creation_date'
         was_created_recently.boolean = True
         was_created_recently.short_description = 'Created Recently?'
+
+#AWS
+# Running Instances
+class RunningInstances(models.Model):
+

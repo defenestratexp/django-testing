@@ -38,3 +38,14 @@ def amidata(request):
     #    })
     #return HttpResponse(template.render(context))
     return render(request, 'matsonamis/index.html', context)
+
+def buildami(request):
+    latest_ami_list = Ami.objects.order_by('-ami_creation_date')[:5]
+    template = loader.get_template('matsonamis/buildami.html')
+    context = {'latest_ami_list': latest_ami_list}
+    return render(request, 'matsonamis/buildami.html', context)
+
+def testview(request):
+    template = loader.get_template('matsonamis/testview.html')
+    context = {}
+    return render(request, 'matsonamis/testview.html', context)

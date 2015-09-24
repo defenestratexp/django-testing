@@ -26,7 +26,9 @@ urlpatterns = [
         #url(r'^test/', include('matsonamis.urls')),
 
         #These urlconfs work just fine
+        url(r'^build', 'matsonamis.views.buildami', name='site_buildami'),
         url(r'^data', 'matsonamis.views.amidata', name='amidata'),
+        url(r'^testview', 'matsonamis.views.testview', name='site_testview'),
         url(r'^ami', 'matsonamis.views.splash', name='splash'),
         url(r'^admin/', include(admin.site.urls)),
 ]

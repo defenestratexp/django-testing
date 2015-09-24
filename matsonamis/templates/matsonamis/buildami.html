@@ -1,0 +1,21 @@
+{% if latest_ami_list %}
+ <table>
+  <tr>
+   <td>AMI Name</td>
+   <td>AMI-ID</td>
+   <td>Launch?</td>
+  </tr>
+  {% for ami in latest_ami_list %}
+
+  <tr>
+   <td>{{ ami.ami_name }}</td>
+   <td>{{ ami.ami_id }}</td>
+   <td><form action="testview"><input type="submit" value="Launch Instance" /></form> </td>
+  </tr>
+  {% endfor %}
+ </table>
+
+{% else %}
+ <p>No images found.</p>
+{% endif %}
+
